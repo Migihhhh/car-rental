@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/dist/output.css">
     <title>Royal Rides</title>
 </head>
@@ -30,7 +31,7 @@
         <img src="/assets/car.gif" alt="Moving Car" class="w-full h-full object-cover filter brightness-50">
         <div class="absolute inset-0 flex flex-col items-center justify-center pb-60">
             <h1 class="text-white text-7xl font-bold mb-4 pb-5">NU-Royal Rides</h1>
-            <a href="http://localhost/car_rental/index.php"><button class=" text-white px-5 py-0.3 rounded " > 
+            <a href="http://localhost/car_rental/add.php"><button class=" text-white px-5 py-0.3 rounded " > 
               <img src="assets/RentNow.png" alt="">
             </button></a>
       </div>
@@ -75,75 +76,56 @@
         </div>
       </div>
 
-      
-
-
-
-      <footer class="bg-blue-950 text-white p-8 m-8">
-        <div class="flex justify-between m-8 p-26">
-          <div class="text-left items-center flex flex-col">
-            <img src="assets/logo.png" alt="">
-            <h3 class="text-lg font-bold">Group Members</h3>
-            <p class="mt-2">Consul, Miggy C.</p>
-            <p>Legaspi, Sean Martin G.</p>
-            <p>Ramos, Leovik</p>
-            <p>Alejandro, Dirk Kobe</p>
-          </div> 
-          <div class="items-start flex space-x-4 p-4">
-            <img class="" src="assets/fblogo.png" alt="">
-            <img class="" src="assets/githublogo.png" alt="">
-          </div>
+      <title>Available Cars</title>
+    </head>
+    <div class="text-center mb-8">
+      <h2 class="text-7xl font-extrabold text-blue-900 tracking-wider uppercase">AVAILABLE CARS</h2>
+    </div>
+    <div class="car-list">
+      <div class="car-card-horizontal">
+        <img src="assets/ferrari296gtb.jpg" alt="Ferrari 296 GTB">
+        <div class="car-info">
+          <h3>Ferrari 296 GTB</h3>
+          <p class="car-details">Seats: 2 | Transmission: 8-speed dual-clutch automatic. | This mid-engine supercar highlights Ferrari's latest hybrid technology.</p><button class="view-details">View Details</button>
         </div>
-      </footer> 
-
-      <!-- <div class="bg-blue-950 h-screen flex flex-col items-center">
-         Heading Section 
-        <div class="text-white text-4xl pt-10 text-center">
-          <h2 class="font-bold">Check for rental!</h2>
+      </div>
+      <div class="car-card-horizontal">
+        <img src="assets/fordmustangdarkhorse.jpg" alt="Ford Mustang Dark Horse">
+        <div class="car-info">
+          <h3>Ford Mustang Dark Horse</h3>
+          <p class="car-details">Seats: 4 | Transmission: 6/10-Speed Automatic. | This is a high performance version of the current generation mustang.</p><button class="view-details">View Details</button>
         </div>
-      
-         Table Section 
-        <div class="container mx-auto pt-20 flex justify-center">
-          <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
-              <thead>
-                <tr class="bg-gray-200 text-gray-700">
-                  <th class="py-2 px-4 border">Name</th>
-                  <th class="py-2 px-4 border">Brand</th>
-                  <th class="py-2 px-4 border">Type</th>
-                  <th class="py-2 px-4 border">Available</th>
-                  <th class="py-2 px-4 border">Due Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                 Table rows remain the same
-                <tr class="text-center">
-                  <td class="py-2 px-4 border">Car 1</td>
-                  <td class="py-2 px-4 border">Toyota</td>
-                  <td class="py-2 px-4 border">SUV</td>
-                  <td class="py-2 px-4 border text-green-500 font-semibold">Yes</td>
-                  <td class="py-2 px-4 border">-</td>
-                </tr>
-                <tr class="text-center bg-gray-50">
-                  <td class="py-2 px-4 border">Car 2</td>
-                  <td class="py-2 px-4 border">Honda</td>
-                  <td class="py-2 px-4 border">Sedan</td>
-                  <td class="py-2 px-4 border text-red-500 font-semibold">No</td>
-                  <td class="py-2 px-4 border">2025-03-15</td>
-                </tr>
-                <tr class="text-center">
-                  <td class="py-2 px-4 border">Car 3</td>
-                  <td class="py-2 px-4 border">Ford</td>
-                  <td class="py-2 px-4 border">Truck</td>
-                  <td class="py-2 px-4 border text-green-500 font-semibold">Yes</td>
-                  <td class="py-2 px-4 border">-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      </div>
+      <div class="car-card-horizontal">
+        <img src="assets/mclaren765lt.jpg" alt="McLaren 765LT">
+        <div class="car-info">
+          <h3>McLaren 765LT</h3>
+          <p class="car-details">Seats: 2 | Transmission: 7-speed dual-clutch automatic. | This "Longtail" model is focused on extreme track performance.</p><button class="view-details">View Details</button>
         </div>
-      </div> -->
-
-      
+      </div>
+    </div>
+    <div class="car-list">
+      <div class="car-card-horizontal">
+        <img src="assets/teslamodelsplaid.jpg" alt="Tesla Model S Plaid">
+        <div class="car-info">
+          <h3>Tesla Model S Plaid</h3>
+          <p class="car-details">Seats: 5 | Transmission: Single-speed automatic. | This electric vehicle boasts incredible acceleration.</p><button class="view-details">View Details</button>
+        </div>
+      </div>
+      <div class="car-card-horizontal">
+        <img src="assets/audir8.jpg" alt="Audi R8 V10 performance quattro">
+        <div class="car-info">
+          <h3>Audi R8 V10 performance quattro</h3>
+          <p class="car-details">Seats: 2 | Transmission: 7-speed S tronic dual-clutch transmission. | This is Audi's flagship supercar.</p><button class="view-details">View Details</button>
+        </div>
+      </div>
+      <div class="car-card-horizontal">
+        <img src="assets/bugattichiron.jpg" alt="Bugatti Chiron Super Sport">
+        <div class="car-info">
+          <h3>Bugatti Chiron Super Sport</h3>
+          <p class="car-details">Seats: 2 | Transmission: 7-speed dual-clutch automatic. | This hypercar is known for its extreme speed and luxury.</p><button class="view-details">View Details</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

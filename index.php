@@ -46,7 +46,6 @@ $result = $conn->query($sql);
 
         <h1>Car Rental Management</h1>
 
-        <!-- Add New Rental Button -->
         <a href="add.php" class="add-btn">+ Add New Rental</a>
         <a href="http://127.0.0.1:5501" class="add-btn">Return to Home</a>
 
