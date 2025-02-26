@@ -1,8 +1,9 @@
 <?php
-include 'db.php';
+include 'db_connect.php';
 
-$id = $_GET["id"];
-$result = $conn->query("SELECT * FROM rentals WHERE id=$id");
+$id = $_GET['id'];
+$sql = "SELECT * FROM rentals WHERE id=$id";
+$result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,15 +13,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rental_due = $_POST["rental_due"];
     $availability = $_POST["availability"];
 
-    $sql = "UPDATE rentals SET customer_name='$customer_name', car_brand='$car_brand', model='$model', rental_due='$rental_due', availability='$availability' WHERE id=$id";
+    $sql = "UPDATE rentals SET 
+                customer_name='$customer_name', 
+                car_brand='$car_brand', 
+                model='$model', 
+                rental_due='$rental_due', 
+                availability='$availability'
+            WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: index.php");
-        exit();
     } else {
-        echo "Error updating record: " . $conn->error;
+        echo "Error: " . $conn->error;
     }
 }
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>

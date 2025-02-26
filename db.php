@@ -1,11 +1,11 @@
 <?php
-$host = "localhost";
-$user = "root"; 
-$pass = ""; 
-$db = "car_rental";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "car_rental";
 
 // Create connection
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {

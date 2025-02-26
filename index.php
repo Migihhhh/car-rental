@@ -12,8 +12,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch rental data
-$sql = "SELECT id, customer_name, car_brand, model, rental_start, rental_due, availability FROM rentals";
+// Fetch rental data with JOIN
+$sql = "SELECT r.id, c.name AS customer_name, c.address, c.contact_number, c.email, 
+               ca.brand AS car_brand, ca.model, r.rental_start, r.rental_due, ca.availability 
+        FROM rentals r
+        JOIN customers c ON r.customer_id = c.id
+        JOIN cars ca ON r.car_id = ca.id";
 $result = $conn->query($sql);
 ?>
 
@@ -29,12 +33,10 @@ $result = $conn->query($sql);
    
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Left side: Logo and text -->
             <div class="nav-left">
                 <img class="logo" src="logo.png" alt="Logo">
                 <span class="site-title">NU-Royal Rides</span>
             </div>
-            <!-- Right side: Login and Signup -->
             <div class="nav-right">
                 <a href="#" class="nav-link">Login</a>
                 <a href="#" class="signup-btn">Signup</a>
@@ -79,7 +81,7 @@ $result = $conn->query($sql);
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='6' style='text-align:center;'>No rentals found</td></tr>";
+                    echo "<tr><td colspan='7' style='text-align:center;'>No rentals found</td></tr>";
                 }
                 ?>
             </tbody>
