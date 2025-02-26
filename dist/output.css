@@ -2675,3 +2675,327 @@
   syntax: "*";
   inherits: false;
 }
+/*for view detail*/
+.hero {
+  background: url('assets/carrent1.png') no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+  
+          /* Filters */
+          .filters {
+              display: flex;
+              justify-content: center;
+              gap: 15px;
+              margin: 20px 0;
+          }
+  
+          .filters select {
+              background: white;
+              border: 2px solid #0a1f44;
+              padding: 12px 20px;
+              cursor: pointer;
+              border-radius: 5px;
+              font-weight: bold;
+              color: #0a1f44;
+              transition: all 0.3s ease;
+          }
+  
+          .filters select:hover {
+              background-color: #0a1f44;
+              color: white;
+          }
+  
+  
+          .view-details:hover {
+              background-color: #0056b3;
+          }
+  
+          /* Footer */
+          .footer {
+              background-color: #0a1f44;
+              color: white;
+              text-align: center;
+              padding: 15px;
+              margin-top: 20px;
+          }
+
+              /* General Styles */
+              body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  background-color: #ffffff; /* White Background */
+                  color: #000000;
+              }
+      
+              .car-card-horizontal {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  background: #f8f9fa;
+                  padding: 20px;
+                  border-radius: 10px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  border: 2px solid #ccc;
+                  width: 30%;
+                  min-width: 280px;
+                  text-align: center;
+                  transition: transform 0.3s, box-shadow 0.3s;
+              }
+      
+              .car-card-horizontal:hover {
+                  transform: scale(1.05);
+                  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                  border-color: #007bff;
+              }
+      
+              .car-card-horizontal img {
+                  width: 100%;
+                  height: 180px;
+                  object-fit: cover;
+                  border-radius: 5px;
+              }
+      
+              /* Tag Styling */
+              .tag {
+                  display: inline-block;
+                  background-color: #007bff;
+                  color: white;
+                  font-size: 14px;
+                  font-weight: bold;
+                  padding: 6px 12px;
+                  border-radius: 15px;
+                  margin-top: 10px;
+                  text-transform: uppercase;
+              }
+      
+
+      .car-card-horizontal {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: #f8f9fa; /* Light Gray Background */
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #ccc;
+          width: 30%;
+          min-width: 250px;
+          text-align: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .car-card-horizontal:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          border-color: #007bff;
+      }
+
+      .car-card-horizontal img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 5px;
+      }
+
+      /* Car Info */
+      .car-info {
+          width: 100%;
+          padding: 15px;
+          border: 2px solid #ccc;
+          border-radius: 8px;
+          background: white;
+          margin-top: 10px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      /* Car Title */
+      .car-info h3 {
+          margin-top: 10px;
+          font-size: 24px;
+          color: #333;
+      }
+
+      /* Car Details */
+      .car-details {
+          font-size: 16px;
+          color: #666;
+          margin-top: 5px;
+      }
+
+      /* View Details Button */
+      .view-details {
+          background-color: #007bff;
+          color: white;
+          padding: 12px 18px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: auto; /* Pushes button to the bottom */
+          width: 160px;
+          transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      .view-details:hover {
+          background-color: #0056b3;
+          transform: translateY(-2px);
+      }
+
+          /* General Styles */
+          body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #ffffff; /* White Background */
+              color: #000000; /* Black Text for Contrast */
+          }
+  
+  
+          .available-cars h2 {
+              font-size: 48px; /* Bigger Title */
+              font-weight: bold;
+              color: #007bff; /* Bright Blue */
+              text-transform: uppercase;
+              letter-spacing: 3px;
+              margin-bottom: 10px;
+          }
+  
+          .available-cars p {
+              font-size: 20px;
+              color: #555;
+              margin-top: 5px;
+          }
+  
+          /* Car Listings */
+          .car-list {
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+              padding: 20px;
+              flex-wrap: wrap;
+          }
+  
+          .car-card-horizontal {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              background: #f8f9fa; /* Light Gray Background */
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border: 2px solid #ccc;
+              width: 30%;
+              min-width: 250px;
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+          }
+  
+          .car-card-horizontal:hover {
+              transform: scale(1.05);
+              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+              border-color: #007bff;
+          }
+  
+          .car-card-horizontal img {
+              width: 100%;
+              height: 180px;
+              object-fit: cover;
+              border-radius: 5px;
+          }
+  
+          .car-info h3 {
+              margin-top: 15px;
+              font-size: 24px; /* Slightly Bigger */
+              color: #333;
+          }
+  
+          .car-details {
+              font-size: 16px;
+              color: #666;
+              margin-top: 5px;
+          }
+  
+          .view-details {
+              background-color: #007bff;
+              color: white;
+              padding: 12px 18px;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+              font-weight: bold;
+              cursor: pointer;
+              margin-top: 15px;
+              width: 160px;
+              transition: background 0.3s ease, transform 0.2s ease;
+          }
+  
+          .view-details:hover {
+              background-color: #0056b3;
+              transform: translateY(-2px);
+          }
+
+  .available-cars-btn {
+      background-color: #007bff;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .available-cars-btn:hover {
+      background-color: #0056b3;
+  }
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*yaayyyyy*/
