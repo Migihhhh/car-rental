@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch rental data
-$sql = "SELECT id, customer_name, car_brand, model, rental_due, availability FROM rentals";
+$sql = "SELECT id, customer_name, car_brand, model, rental_start, rental_due, availability FROM rentals";
 $result = $conn->query($sql);
 ?>
 
@@ -55,6 +55,7 @@ $result = $conn->query($sql);
                     <th>Customer Name</th>
                     <th>Car Brand</th>
                     <th>Model</th>
+                    <th>Rental Start</th>
                     <th>Rental Due</th>
                     <th>Availability</th>
                     <th>Actions</th>
@@ -68,6 +69,7 @@ $result = $conn->query($sql);
                                 <td>" . ($row["customer_name"] ?: "-") . "</td>
                                 <td>{$row["car_brand"]}</td>
                                 <td>{$row["model"]}</td>
+                                <td>{$row["rental_start"]}</td>
                                 <td>" . ($row["rental_due"] ?: "-") . "</td>
                                 <td><span class='status " . ($row["availability"] == "Available" ? "available" : "unavailable") . "'>{$row["availability"]}</span></td>
                                 <td class='action-buttons'>
