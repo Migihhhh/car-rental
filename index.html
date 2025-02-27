@@ -83,7 +83,7 @@
           <span style="display: inline-block; background: linear-gradient(135deg, #FFD700, #B8860B); color: rgb(0, 0, 0); font-weight: bold; font-size: 14px; padding: 6px 15px; border-radius: 20px; margin: 10px 0;">Top Pick</span>
           <h3 style="color: rgb(0, 0, 0); margin-top: 10px;">BMW</h3>
           <p style="color: #000000; font-size: 15px; font-weight: 500; margin-bottom: 15px;">Seats: 4 | Transmission: Automatic | Unlimited Mileage</p>
-          <button data-car="BMW" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading...</button>
+          <button id="bmw-count" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading..</button>
         </div>
       </div>
       <div class="car-card-horizontal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 15px; box-shadow: 0px 8px 25px rgba(255, 215, 0, 0.3); padding: 20px; text-align: center; width: 320px; transition: all 0.4s ease-in-out; overflow: hidden;">
@@ -92,7 +92,7 @@
           <span style="display: inline-block; background: linear-gradient(135deg, #FFD700, #B8860B); color: black; font-weight: bold; font-size: 14px; padding: 6px 15px; border-radius: 20px; margin: 10px 0;">Luxury Choice</span>
           <h3 style="color: rgb(0, 0, 0); margin-top: 10px;">Mercedes-Benz</h3>
           <p style="color: #000000; font-size: 15px; font-weight: 500; margin-bottom: 15px;">Seats: 2 | Transmission: Automatic | Unlimited Mileage</p>
-          <button data-car="Mercedes-Benz" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading...</button>
+          <button id="mercedes-count" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading..</button>
         </div>
       </div>
       <div class="car-card-horizontal" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(15px); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 15px; box-shadow: 0px 8px 25px rgba(255, 215, 0, 0.3); padding: 20px; text-align: center; width: 320px; transition: all 0.4s ease-in-out; overflow: hidden;">
@@ -101,7 +101,7 @@
           <span style="display: inline-block; background: linear-gradient(135deg, #FFD700, #B8860B); color: black; font-weight: bold; font-size: 14px; padding: 6px 15px; border-radius: 20px; margin: 10px 0;">Exotic Ride</span>
           <h3 style="color: rgb(0, 0, 0); margin-top: 10px;">Audi</h3>
           <p style="color: #000000; font-size: 15px; font-weight: 500; margin-bottom: 15px;">Seats: 2 | Transmission: Automatic | Unlimited Mileage</p>
-          <button data-car="Audi" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading...</button>
+          <button id="audi-count" style="background: linear-gradient(135deg, #222, #111); color: white; font-weight: bold; font-size: 16px; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease-in-out;">Rented: Loading..</button>
         </div>
       </div>
        <!-- View Detail 2--> 
@@ -177,31 +177,25 @@
         </div>
       </div>
     </footer>
-      
-
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch('get_rent_data.php')
-          .then(response => {
-              if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-              return response.json();
-          })
-          .then(data => {
-            console.log("Processed Data:", data);
-            
-            document.querySelectorAll("button[data-car]").forEach(button => {
-                const brandKey = button.getAttribute("data-car").toLowerCase().trim();
-                const count = data[brandKey] || 0;
-                button.textContent = `Rented: ${count} times`;
-            });
-          })
-          .catch(error => {
-            console.error("Error fetching rental data:", error);
-            document.querySelectorAll("button[data-car]").forEach(button => {
-                button.textContent = "Rental data unavailable";
-            });
-          });
-      });
-    </script>
+      // Fetch JSON data from PHP file
+      fetch('http://localhost/car_rental/get_rent_data.php')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Check if data appears in the console
+        document.getElementById("bmw-count").innerText = `Rented: ${data.bmw}`;
+        document.getElementById("mercedes-count").innerText = `Rented: ${data["mercedes-benz"]}`;;
+        document.getElementById("audi-count").innerText = `Rented: ${data.audi}`;
+    })
+    .catch(error => console.error("Error fetching data:", error));
+
+    setInterval(fetchRentalData, 5000);
+
+    // Run once on page load
+    fetchRentalData();
+
+  </script>
+  
+
   </body>
 </html>
